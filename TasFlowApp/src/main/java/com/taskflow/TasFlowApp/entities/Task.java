@@ -1,0 +1,21 @@
+package com.taskflow.TasFlowApp.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Task {
+    @Id
+    private String id;
+    private StatusTask statusTask;
+    private String name;
+    private String description;
+}
