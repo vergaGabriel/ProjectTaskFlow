@@ -1,4 +1,4 @@
-package com.taskflow.TasFlowApp.entities;
+package com.taskflow.TasFlowApp.domain.entity;
 
 public enum StatusTask {
     IN_PROGRESS,

@@ -1,7 +1,9 @@
-package com.taskflow.TasFlowApp.entities;
+package com.taskflow.TasFlowApp.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,10 +14,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Task {
+public class User {
     @Id
     private String id;
-    private StatusTask statusTask;
+    @NotNull
     private String name;
-    private String description;
+    @Email
+    @NotNull
+    private String email;
+    private String password;
+    @NotNull
+    private String phone;
 }
