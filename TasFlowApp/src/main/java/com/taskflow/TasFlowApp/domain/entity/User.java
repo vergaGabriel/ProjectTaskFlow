@@ -1,28 +1,34 @@
 package com.taskflow.TasFlowApp.domain.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
+@Builder
 public class User {
     @Id
     private String id;
     @NotNull
     private String name;
     @Email
-    @NotNull
+    @Column(unique = true, nullable = false)
     private String email;
     private String password;
-    @NotNull
+    @Column(unique = true, nullable = false)
     private String phone;
+
+    @OneToMany(mappedBy = "task_id")
+    private Set<Task> tasks = new HashSet<>();
 }

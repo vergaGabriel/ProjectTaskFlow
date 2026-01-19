@@ -2,6 +2,8 @@ package com.taskflow.TasFlowApp.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,4 +20,8 @@ public class Task {
     private StatusTask statusTask;
     private String name;
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User userId;
 }
