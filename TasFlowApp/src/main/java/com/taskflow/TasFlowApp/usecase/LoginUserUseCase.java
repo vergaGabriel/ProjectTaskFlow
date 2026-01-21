@@ -1,7 +1,7 @@
 package com.taskflow.TasFlowApp.usecase;
 
-import com.taskflow.TasFlowApp.application.dto.UserDto;
 import com.taskflow.TasFlowApp.domain.entity.User;
+import com.taskflow.TasFlowApp.infra.repository.TaskRepository;
 import com.taskflow.TasFlowApp.infra.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -9,18 +9,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class CreateUserUseCase {
+public class LoginUserUseCase {
     private final UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
-    public void execute(UserDto userDto) {
-        User user = User.builder()
-                .name(userDto.name)
-                .email(userDto.email)
-                .password(passwordEncoder.encode(userDto.password))
-                .phone(userDto.phone)
-                .build();
-
-        this.userRepository.save(user);
+    public boolean execute(String email, String password) {
+        User user = userRepository.getUserByEmail(email);
+        return passwordEncoder.matches(password, user.getPassword());
     }
 }
