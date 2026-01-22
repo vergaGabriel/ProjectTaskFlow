@@ -29,6 +29,9 @@ public class User {
     @Column(unique = true, nullable = false)
     private String phone;
 
-    @OneToMany(mappedBy = "task_id")
-    private Set<Task> tasks = new HashSet<>();
+    @OneToMany(mappedBy = "created_task_id")
+    private Set<Task> createdTasks = new HashSet<>();
+
+    @OneToMany(mappedBy = "assigend_task_id")
+    private Set<Task> assignedTasks = new HashSet<>();
 }
