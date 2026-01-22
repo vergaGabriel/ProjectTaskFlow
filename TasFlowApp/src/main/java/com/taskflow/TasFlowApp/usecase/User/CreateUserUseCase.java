@@ -1,4 +1,4 @@
-package com.taskflow.TasFlowApp.usecase;
+package com.taskflow.TasFlowApp.usecase.User;
 
 import com.taskflow.TasFlowApp.application.dto.UserDto;
 import com.taskflow.TasFlowApp.domain.entity.User;

@@ -24,4 +24,8 @@ public class UserRepository {
     public User getUserByEmail(String userEmail) {
         return this.iUserRepository.getUserByEmail(userEmail);
     }
+
+    public User getUserById(String userId) {
+        return this.iUserRepository.getUserById(userId);
+    }
 }

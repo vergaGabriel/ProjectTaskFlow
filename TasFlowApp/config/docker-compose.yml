@@ -1,0 +1,15 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: config/Dockerfile.dockerfile
+    container_name: backend-v1.0
+    ports:
+      - "8080:8080"
+
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

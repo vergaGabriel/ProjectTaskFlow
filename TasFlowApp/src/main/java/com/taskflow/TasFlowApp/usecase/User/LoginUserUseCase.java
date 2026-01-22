@@ -1,7 +1,6 @@
-package com.taskflow.TasFlowApp.usecase;
+package com.taskflow.TasFlowApp.usecase.User;
 
 import com.taskflow.TasFlowApp.domain.entity.User;
-import com.taskflow.TasFlowApp.infra.repository.TaskRepository;
 import com.taskflow.TasFlowApp.infra.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

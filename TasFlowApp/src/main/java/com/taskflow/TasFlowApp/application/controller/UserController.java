@@ -1,8 +1,8 @@
 package com.taskflow.TasFlowApp.application.controller;
 
 import com.taskflow.TasFlowApp.application.dto.UserDto;
-import com.taskflow.TasFlowApp.usecase.CreateUserUseCase;
-import com.taskflow.TasFlowApp.usecase.LoginUserUseCase;
+import com.taskflow.TasFlowApp.usecase.User.CreateUserUseCase;
+import com.taskflow.TasFlowApp.usecase.User.LoginUserUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
